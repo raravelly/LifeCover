@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using LifeCover.Api.Models;
+using LifeCover.Services;
 
 namespace LifeCover.Api.Validators
 {
@@ -9,7 +10,8 @@ namespace LifeCover.Api.Validators
         {
             CascadeMode = CascadeMode.Continue;
             RuleFor(x => x.Occupation)
-                .NotEmpty();
+                .NotNull()
+                .IsEnumName(typeof(Occupation), caseSensitive: false);
             RuleFor(a => a.Age)
                 .GreaterThan(0)
                 .When(d => d.DateOfBirth == null);
