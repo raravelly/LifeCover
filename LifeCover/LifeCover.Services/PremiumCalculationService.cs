@@ -1,6 +1,6 @@
 ﻿namespace LifeCover.Services
 {
-    public class PremiumCalculationService
+    public class PremiumCalculationService : IPremiumCalculationService
     {
         public decimal CalculatePremium(long sumInsured, Occupation occupation, int age)
         {
