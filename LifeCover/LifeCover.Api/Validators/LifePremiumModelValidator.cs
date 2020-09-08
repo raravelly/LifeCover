@@ -14,7 +14,7 @@ namespace LifeCover.Api.Validators
                 .GreaterThan(0)
                 .When(d => d.DateOfBirth == null);
             RuleFor(d => d.DateOfBirth)
-                .Must(d => d != default)
+                .NotNull()
                 .When(a => a.Age == null);
             RuleFor(x => x.SumInsured)
                 .GreaterThan(0);
