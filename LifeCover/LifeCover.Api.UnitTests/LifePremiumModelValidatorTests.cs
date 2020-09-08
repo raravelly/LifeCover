@@ -21,7 +21,7 @@ namespace LifeCover.Api.UnitTests
         {
             // Act
 
-            var result = sut.Validate(new LifePremiumModel());
+            var result = sut.Validate(new LifePremiumModel{Occupation = "fake"});
             // Assert
             result.Should().NotBeNull();
             result.IsValid.Should().BeFalse();
