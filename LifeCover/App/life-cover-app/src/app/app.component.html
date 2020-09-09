@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Life Cover - Quote</h1>
+  <hr>
+  <app-quote *ngIf="occupations.length > 0" 
+    [occupations]="occupations"
+    (quote)="onGetQuote($event)"></app-quote>
+    
+  <hr>
+
+    <div *ngIf="premium > 0">
+      Your preimium: {{premium}}
+    </div>
+</div>
