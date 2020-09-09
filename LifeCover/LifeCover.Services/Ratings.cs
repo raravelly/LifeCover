@@ -2,7 +2,7 @@
 
 namespace LifeCover.Services
 {
-    public static class Ratings
+    public static class Ratings //These would be stored in DB 
     {
         public static Dictionary<Rating, decimal> RatingFactors = new Dictionary<Rating, decimal>
         {

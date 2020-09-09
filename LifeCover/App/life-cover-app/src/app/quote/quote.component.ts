@@ -25,9 +25,5 @@ export class QuoteComponent{
   requestQuote(details: QuoteDetails){
     this.quote.emit(details);
   }
-
-  get diagnostic() { return JSON.stringify(this.model); }
-  get occupationsList() { return JSON.stringify(this.occupations); }
-
 }
 

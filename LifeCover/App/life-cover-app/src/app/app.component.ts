@@ -9,7 +9,7 @@ import { QuoteDetails } from './quote-details';
 export class AppComponent implements OnInit{
   title = 'Life Cover';
 
-  occupations: string[];
+  occupations: string[] = [];
 
   premium: number = 0;
 

@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Life Cover - Quote</h1>
+  <h1 class="text-success">Life Cover - Quote</h1>
   <hr>
   <app-quote *ngIf="occupations.length > 0" 
     [occupations]="occupations"
@@ -8,7 +8,7 @@
   <hr>
 
     <div *ngIf="premium > 0">
-      Your preimium: {{premium}}
+      <p class="text-info"> <strong>Your preimium: ${{premium}}</strong> </p> 
     </div>
     <div *ngIf="errors.length > 0" class="text-danger">
       <strong>Error occurred</strong>
