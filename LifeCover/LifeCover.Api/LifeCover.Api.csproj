@@ -14,5 +14,9 @@
     <ProjectReference Include="..\LifeCover.Services\LifeCover.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
 
 </Project>
