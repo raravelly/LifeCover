@@ -13,6 +13,8 @@ export class AppComponent implements OnInit{
 
   premium: number = 0;
 
+  errors: string[] = [];
+
   constructor(private quoteService: QuoteService){}
 
   ngOnInit(): void {
@@ -27,6 +29,13 @@ export class AppComponent implements OnInit{
   onGetQuote(details: QuoteDetails){
     console.log('app-component: quote:', JSON.stringify(details));
     this.quoteService.getQuote(details)
-    .subscribe(p => this.premium = p);
+    .subscribe(p => 
+      {
+        this.premium = p
+      },
+      err => {
+        this.errors = err.error;
+        console.log('errors: ', this.errors);
+      });
   }
 }

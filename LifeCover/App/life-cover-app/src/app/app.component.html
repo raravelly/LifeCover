@@ -10,4 +10,10 @@
     <div *ngIf="premium > 0">
       Your preimium: {{premium}}
     </div>
+    <div *ngIf="errors.length > 0" class="text-danger">
+      <strong>Error occurred</strong>
+      <ul>
+        <li *ngFor="let e of errors">{{e}}</li>
+      </ul>
+    </div>
 </div>
