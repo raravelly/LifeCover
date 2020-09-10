@@ -12,7 +12,6 @@ export class QuoteComponent{
   @Input() occupations: string[];
   @Output() quote = new EventEmitter<QuoteDetails>();
   model = <QuoteDetails>{};
-
   onSubmit(myform: NgForm){
     if(myform.valid){
       console.log('valid');
@@ -23,6 +22,7 @@ export class QuoteComponent{
     }
   }
   requestQuote(details: QuoteDetails){
+    console.log('emitting quote request');
     this.quote.emit(details);
   }
 }
