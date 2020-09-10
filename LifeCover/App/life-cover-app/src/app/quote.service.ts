@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { isDevMode } from '@angular/core';
 
 import { QuoteDetails } from './quote-details';
 
@@ -9,7 +10,7 @@ import { QuoteDetails } from './quote-details';
 })
 export class QuoteService {
 
-  apiBaseUrl = "https://localhost:5001/";
+  apiBaseUrl = isDevMode() ? "https://localhost:5001/" : "/";
   constructor(private http: HttpClient) { }
   getOccupations(): Observable<string[]>{
     var result = this.http.get<string[]>(this.apiBaseUrl + 'api/occupations');
