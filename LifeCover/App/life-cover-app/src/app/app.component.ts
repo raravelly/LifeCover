@@ -28,6 +28,7 @@ export class AppComponent implements OnInit{
 
   onGetQuote(details: QuoteDetails){
     console.log('app-component: quote:', JSON.stringify(details));
+    this.errors = [];
     this.quoteService.getQuote(details)
     .subscribe(p => 
       {
