@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using System;
+using FluentValidation;
 using LifeCover.Api.Models;
 using LifeCover.Services;
 
@@ -18,6 +19,9 @@ namespace LifeCover.Api.Validators
             RuleFor(d => d.DateOfBirth)
                 .NotNull()
                 .When(a => a.Age == null);
+            RuleFor(d => d.DateOfBirth)
+                .LessThan(DateTime.Today)
+                .When(a => a.DateOfBirth != null);
             RuleFor(x => x.SumInsured)
                 .GreaterThan(0);
             RuleFor(x => x.Name)

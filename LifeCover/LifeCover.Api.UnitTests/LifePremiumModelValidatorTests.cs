@@ -37,7 +37,7 @@ namespace LifeCover.Api.UnitTests
             // Arrange
             var model = new LifePremiumModel
             {
-                DateOfBirth = DateTime.Now,
+                DateOfBirth = DateTime.Today.AddDays(-1),
                 Name = "some name",
                 Occupation = "Doctor",
                 SumInsured = 1
